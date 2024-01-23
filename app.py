@@ -6,8 +6,15 @@ from langchain_openai import ChatOpenAI
 import streamlit as st
 from PIL import Image
 import io
-import datetime
 import logging
+
+logger = logging.getLogger()
+logging.basicConfig(level=logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    handlers=[
+                        logging.FileHandler("app.log"),
+                        logging.StreamHandler()
+                    ])
 
 
 def load_config():
@@ -41,8 +48,8 @@ def text_to_story(scenario):
 
 
 def log_call(caption, story):
-    log_entry = f"{caption}|{story}"
-    logging(log_entry)
+    log_entry = f"Caption: {caption}|| Generated: {story}"
+    logger.info(log_entry)
 
 
 def draw_ui():
@@ -62,7 +69,7 @@ def draw_ui():
             with st.expander("PCK says:", expanded=True):
                 caption = img_to_text(img_bytes)
                 story = text_to_story(caption)
-                log_call(caption, story)
+                log_call(caption, story, )
                 st.write(story)
 
 
