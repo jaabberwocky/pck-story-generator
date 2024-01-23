@@ -57,7 +57,7 @@ def draw_ui():
         page_title="PCK!", page_icon="🇸🇬")
     st.header("Eh PCK can help you tell story one!")
     "You send me picture, I help you tell story lor - very simple one!"
-    st.image("phuachukang.jpg")
+    st.image("static/img/phuachukang.jpg")
     uploaded_file = st.file_uploader(
         "Show me picture lah...", type=["jpg", "png"])
 
