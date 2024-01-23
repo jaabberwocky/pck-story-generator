@@ -7,6 +7,7 @@ import streamlit as st
 from PIL import Image
 import io
 import datetime
+import logging
 
 
 def load_config():
@@ -40,10 +41,8 @@ def text_to_story(scenario):
 
 
 def log_call(caption, story):
-    log_entry = f"Timestamp: {datetime.datetime.now()}|{caption}|{story}\n\n"
-    with open("log.txt", "a") as f:
-        f.write(log_entry)
-    print(log_entry)
+    log_entry = f"{caption}|{story}"
+    logging(log_entry)
 
 
 def draw_ui():
