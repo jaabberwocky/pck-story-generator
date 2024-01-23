@@ -13,7 +13,7 @@ def load_config():
     load_dotenv(find_dotenv())
 
 
-def img2text(image_bytes):
+def img_to_text(image_bytes):
     image = Image.open(io.BytesIO(image_bytes))
     image_to_text = pipeline(
         'image-to-text', model='nlpconnect/vit-gpt2-image-captioning')
@@ -61,7 +61,7 @@ def draw_ui():
         st.write("")
         with st.spinner("Wait ah, I thinking..."):
             with st.expander("PCK says:", expanded=True):
-                caption = img2text(img_bytes)
+                caption = img_to_text(img_bytes)
                 story = text_to_story(caption)
                 log_call(caption, story)
                 st.write(story)
