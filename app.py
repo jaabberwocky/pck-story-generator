@@ -72,6 +72,8 @@ def draw_ui():
                 story = text_to_story(caption)
                 log_call(caption, story, )
                 st.write(story)
+    st.link_button(
+        "Github", "https://github.com/jaabberwocky/pck-story-generator")
 
 
 if __name__ == "__main__":
