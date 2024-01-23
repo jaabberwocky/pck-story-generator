@@ -9,7 +9,7 @@ Fun project to generate Phua Chu Kang-styled stories from image using multi-moda
     - Why not? 😊
 2. Why Phua Chu Kang?
     - Why not? 😊
-3. Do you store the images
+3. Do you store the images?
     - No, no images are persisted on the backend. The bytes from the image are directly passed for model inference.
 
 ## Credits
