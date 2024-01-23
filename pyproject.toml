@@ -1,0 +1,23 @@
+[project]
+name = "pck-story-generator"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "tobias", email = "tobias@tobias-leong.dev"},
+]
+dependencies = [
+    "python-dotenv>=1.0.0",
+    "transformers>=4.37.0",
+    "torch>=2.1.2",
+    "pillow>=10.2.0",
+    "langchain>=0.1.2",
+    "langchain-openai>=0.0.3",
+    "streamlit>=1.30.0",
+]
+requires-python = "==3.11.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
